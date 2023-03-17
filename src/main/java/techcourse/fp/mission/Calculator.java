@@ -5,22 +5,12 @@ import java.util.function.Predicate;
 
 public class Calculator {
 
-    public static int sumAll(List<Integer> numbers) {
-        int total = 0;
-        for (int number : numbers) {
-            total += number;
-        }
-        return total;
+    public static int sumAll(List<Integer> numbers, Conditional condition) {
+        return calculateTotal(numbers, condition);
     }
 
-    public static int sumAllEven(List<Integer> numbers) {
-        int total = 0;
-        for (int number : numbers) {
-            if (number % 2 == 0) {
-                total += number;
-            }
-        }
-        return total;
+    public static int sumAllEven(List<Integer> numbers, Conditional condition) {
+        return calculateTotal(numbers, condition);
     }
 
     public static int sumAllOverThree(List<Integer> numbers, Conditional condition) {
@@ -33,6 +23,10 @@ public class Calculator {
 //        }
 //
 //        return total;
+        return calculateTotal(numbers, condition);
+    }
+
+    private static int calculateTotal(List<Integer> numbers, Conditional condition) {
         int total = 0;
         for (int number : numbers) {
             if (condition.filter(number)) {

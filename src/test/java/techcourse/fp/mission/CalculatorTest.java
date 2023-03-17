@@ -13,13 +13,13 @@ class CalculatorTest {
 
     @Test
     public void sumAll() {
-        int sum = Calculator.sumAllOverThree(numbers, number -> true);
+        int sum = Calculator.sumAll(numbers, number -> true);
         assertThat(sum).isEqualTo(21);
     }
 
     @Test
     public void sumAllEven() {
-        int sum = Calculator.sumAllOverThree(numbers, number -> number % 2 == 0);
+        int sum = Calculator.sumAllEven(numbers, number -> number % 2 == 0);
         assertThat(sum).isEqualTo(12);
     }
 
